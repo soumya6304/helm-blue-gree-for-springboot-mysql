@@ -35,6 +35,8 @@ service docker start
 ```
 
 ```Minikube setup```
+
+```bash
 curl -Lo minikube https://github.com/kubernetes/minikube/releases/download/v1.25.2/minikube-linux-amd64
 chmod +x minikube
 sudo mv minikube /usr/bin/
