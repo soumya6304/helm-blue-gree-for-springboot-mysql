@@ -18,7 +18,29 @@ yum install git -y
 yum install maven -y
 ```
 ## kubernetes cluster - minikube
-[minikube setup](https://github.com/Naresh240/kubernetes/blob/main/minikube-setup/README.md)
+```kubectl (install)```
+
+```bash
+curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mv kubectl /usr/bin
+kubectl version --short --client
+```
+
+```Install docker```
+
+```bash
+yum install docker -y
+service docker start
+```
+
+```Minikube setup```
+curl -Lo minikube https://github.com/kubernetes/minikube/releases/download/v1.25.2/minikube-linux-amd64
+chmod +x minikube
+sudo mv minikube /usr/bin/
+yum install conntrack -y
+minikube start --driver=none
+```
 
 ## Install helm
 
@@ -64,8 +86,6 @@ docker push soumya6304/springboothello:v1
 ```bash
 helm install springboothello helm/springboot-example
 ```
-## Add Record in Hostedzone under Route53
-![image](https://user-images.githubusercontent.com/58024415/209925555-cc9e5f73-2df8-4e8c-861d-b03a15ec33b3.png)
 
 ## Check application in UI
-![image](https://user-images.githubusercontent.com/58024415/209925428-28d35048-b8c7-46ad-96e8-aff1c92550db.png)
+![image](https://user-images.githubusercontent.com/101722548/210037227-fdb07935-fe48-4a5d-a302-f6f0efcb58eb.png)
